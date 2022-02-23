@@ -1,5 +1,5 @@
-## ANOVA ANALYSIS##
-setwd("C:/Users/cecilexgao/Desktop/lbs/code/")
+## ANOVA ANALYSIS(Fig. 2)##
+
 dta<-read.csv("data_online.csv",header=T,na.strings = c("NA"))
 
 ####################school status#################

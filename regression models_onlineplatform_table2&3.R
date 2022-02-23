@@ -1,5 +1,5 @@
 require(robust)
-setwd("C:/Users/cecilexgao/Desktop/lbs/code/")
+
 dta<-read.csv("data_online.csv",header=T,na.strings = c("NA"))
 dta$course_before<-as.factor(dta$course_before)
 dta$city_tier<-as.factor(dta$city_tier)
@@ -8,7 +8,7 @@ dta$school_status<-relevel(dta$school_status, ref="high")
 dta$family_ses<-relevel(dta$family_ses, ref="high") 
 dta$rural_urban<-relevel(dta$rural_urban, ref="urban") 
 
-###### DV: academic improvement #####
+###### DV: academic improvement(table 2) #####
 ## family ses
 model1<-lmRob(improvement~gender+course_before+family_ses+scale(gold_coin),data=dta)
 summary(model1)
@@ -31,7 +31,7 @@ model5<-lmRob(improvement~gender+course_before+family_ses+rural_urban+school_sta
 summary(model5)
 
 
-##### DV: post score #####
+##### DV: post score (table 3)#####
 ## family ses
 model6<-lmRob(scale(post_score)~gender+family_ses+scale(gold_coin)+scale(pre_score)+ course_before,data=dta)
 summary(model7)
